@@ -16,14 +16,93 @@ A 42 project.
 - `double hypotenuse` *The 'range' for when a point is (roughly) outside of the mandelbrot.*
 - `int max_iterations` *Will define the quality of the image. More iterations means more calculations done to check whether a point diverges/converges (aka goes beyond the hypotenuse).*
 
+*These might not be necessary here*
+- `double	window_map` *To convert the pixels to the range of the mandelbrot*
+- `double	color_map` *To set the color based on the amount of iterations*
+
 **A 'complex' structure:** *Simple structure with a real and an imaginary part.*
+```
+typedef struct s_complex
+{
+	double	r;	//Real part
+	double	i;	//Imaginary part
+}	t_complex;
+```
+**Mapping our domain to the relevant window size**
 
+*Basically Linear mapping/interpolation*
 
+We want to scale all pixels in our window to be *mapped* inside the domain of R[-2, 2] and C[2, -2]. As this is where our initial mandelbrot resides.
+
+*nb: when an int is passed as a double, it will automatically be converted. As a one-way-street it is compatible*
+```
+double	ft_map(double x, double old_min, double old_max, double new_min, double new_max)
+{
+	return (x * (new_max - new_min) / (old_max - old_min));
+}
+```
+*nb2: I think there may be a better way to approach this.*
+```
+double	calculate_map_scale(double old_min, double old_max, double new_min, double new_max)
+{
+	return ((new_max - new_min) / (old_max - old_min));
+}
+```
+and then (especially if we only allow a square).
+```
+t_complex	map(double x, double y, double map_scale)
+{
+	t_complex	result;
+
+	result.r = x * map_scale;
+	result.i = y * map_scale;
+	return (result);
+}
+```
 
 **Do the math:** *A function that checks whether a point is 'close' to the mandelbrot*
+
+*Functions needed*
+- `t_complex	sq_compl(t_complex x);`
+- `t_complex	sum_compl(t_complex x);`
+- `bool		out_of_bounds(double a, double b, double c);`
+
+*Function will take the (mapped!) point/pixel we want to check and will always start from the origin.*
+```
+void	assign_pixel_color(int x, int y, double window_map, double color_map)
+{
+	t_complex	z;	//Starts from the origin (z = 0 + 0i)
+	t_complex	c;	//Not really necessary.
+
+	c.r = x * window_map;
+	c.i = y * window_map;
+	//We can also immediately assign z to c to skip the first iteration
+	z.r = 0;
+	z.i = 0;
+
+	while (i < fractal->max_iterations)
+	{
+		z = sum_compl(sq_compl(z) + c);					//ft_sum and ft_square will return t_complex data type.
+		if (out_of_bounds(z.r, z.i, hypotenuse) == true)		//Pythagoras' theorem: A^2 + B^2 = C^2
+		{
+			//Map the amount of iterations in between a scale of black to white and assign it to the pixel.
+			put_pixel(x, y, color_map * i) 				//The closer i comes to max_iteration the whiter the pixel will be
+		}
+		i++;
+	}
+	//If max_iterations have been met, we consider the point to be inside the mandelbrot.
+	put_pixel(x, y, mandelbrot_color);
+}
 ```
 
-```
+**Initialization**
+
+*Necessary steps to start calculating. (setting all variables so that calculation can work)* 
+- Calculate the maps.
+
+**Render the image**
+
+*Pushing the image to the actual window. Should be final step of first part.*
 
 ### 2. Key handling.
 *Make the Mandelbrot interactive.*
