@@ -5,8 +5,9 @@ A 42 project.
 1. Render the initial Mandelbrot.
 	Non-interactive. 
 	- **The fractal structure:**
-		Initialising the data structure that holds all relevant information of the mandelbrot.
-		-`void *mlx_connection` *holds the return value of `mlx_init()`*
+	
+	Initialising the data structure that holds all relevant information of the mandelbrot.
+	- [] `void *mlx_connection` *holds the return value of `mlx_init()`*
 2. Key handling.
 	Make the Mandelbrot interactive.
 	- Moving around (offsetting the map function).
