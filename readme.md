@@ -2,9 +2,13 @@
 A 42 project.
 
 ## ToC
- 1. [Render the initial Mandelbrot.](#1.-render-the-initial-mandelbrot.)
- 2. [Key handling.](#2.-key-handling.)
-## 1. Render the initial Mandelbrot. 
+ 1. [Rendering the initial Mandelbrot.](#render-the-initial-mandelbrot)
+	- [The fractal structure](#the-fractal-structure)
+   	- [A complex structure](#a-complex-structure)
+	- [Normalizing for window and color mapping](#normalizing-for-window-and-color-mapping)
+ 3. [Key handling.](#key-handling)
+
+## Render the initial Mandelbrot
 *(non-interactive. pops up a second window displaying the mandelbrot)*
 
 ### The image structure:
@@ -13,7 +17,8 @@ A 42 project.
 
 *A structure from harm-smits documentation on the mlxlib. Each pixel will be assigned a color calculated according to the 'closeness' of the Mandelbrot (aka does it converge or diverge)* 
 
-### The fractal structure: *Data structure that holds all relevant information for the fractal.*
+### The fractal structure
+*Data structure that holds all relevant information for the fractal.*
 - `void *mlx_connection` *Holds the return value of `mlx_init()`. Used for easy exiting.*
 - `void *mlx_window` *Holds the return value of `mlx_new_window()`. Used for easy exiting.*
 - `t_img img` *The actual image of the mandelbrot we want to push to the window when rendering.*
@@ -24,7 +29,8 @@ A 42 project.
 - `double	window_map` *To convert the pixels to the range of the mandelbrot*
 - `double	color_map` *To set the color based on the amount of iterations*
 
-### A 'complex' structure: *Simple structure with a real and an imaginary part.*
+### A complex structure
+*Simple structure with a real and an imaginary part.*
 ```
 typedef struct s_complex
 {
@@ -32,7 +38,7 @@ typedef struct s_complex
 	double	i;	//Imaginary part
 }	t_complex;
 ```
-### Mapping our domain to the relevant window size
+### Normalizing for window and color mapping
 
 *Basically Linear mapping/interpolation*
 
@@ -108,7 +114,7 @@ void	assign_pixel_color(int x, int y, double window_map, double color_map)
 
 *Pushing the image to the actual window. Should be final step of first part.*
 
-## 2. Key handling.
+## Key handling.
 *Make the Mandelbrot interactive.*
 
 ### Moving around (offsetting the map function):
