@@ -74,8 +74,8 @@ void	assign_pixel_color(int x, int y, double window_map, double color_map)
 	t_complex	z;	//Starts from the origin (z = 0 + 0i)
 	t_complex	c;	//Not really necessary.
 
-	c.r = x * window_map;
-	c.i = y * window_map;
+	c.r = x * window_map;							//Later on this will also need to be offset and scaled to the zoom.
+	c.i = y * window_map;							//something like; ((y * window_map) * zoom) + offset
 	//We can also immediately assign z to c to skip the first iteration
 	z.r = 0;
 	z.i = 0;
