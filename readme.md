@@ -1,15 +1,19 @@
 # Fract-ol
 A 42 project.
 
-## TO DO
-### 1. Render the initial Mandelbrot. 
+## ToC
+ 1. [Render the initial Mandelbrot.](#1.-render-the-initial-mandelbrot.)
+ 2. [Key handling.](#2.-key-handling.)
+## 1. Render the initial Mandelbrot. 
 *(non-interactive. pops up a second window displaying the mandelbrot)*
 
-**The image structure:** [Writing pixels to an image](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html#writing-pixels-to-a-image)
+### The image structure:
+
+[Writing pixels to an image](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html#writing-pixels-to-a-image)
 
 *A structure from harm-smits documentation on the mlxlib. Each pixel will be assigned a color calculated according to the 'closeness' of the Mandelbrot (aka does it converge or diverge)* 
 
-**The fractal structure:** *Data structure that holds all relevant information for the fractal.*
+### The fractal structure: *Data structure that holds all relevant information for the fractal.*
 - `void *mlx_connection` *Holds the return value of `mlx_init()`. Used for easy exiting.*
 - `void *mlx_window` *Holds the return value of `mlx_new_window()`. Used for easy exiting.*
 - `t_img img` *The actual image of the mandelbrot we want to push to the window when rendering.*
@@ -20,7 +24,7 @@ A 42 project.
 - `double	window_map` *To convert the pixels to the range of the mandelbrot*
 - `double	color_map` *To set the color based on the amount of iterations*
 
-**A 'complex' structure:** *Simple structure with a real and an imaginary part.*
+### A 'complex' structure: *Simple structure with a real and an imaginary part.*
 ```
 typedef struct s_complex
 {
@@ -28,7 +32,7 @@ typedef struct s_complex
 	double	i;	//Imaginary part
 }	t_complex;
 ```
-**Mapping our domain to the relevant window size**
+### Mapping our domain to the relevant window size
 
 *Basically Linear mapping/interpolation*
 
@@ -60,7 +64,7 @@ t_complex	map(double x, double y, double map_scale)
 }
 ```
 
-**Do the math:** *A function that checks whether a point is 'close' to the mandelbrot*
+### Do the math: *A function that checks whether a point is 'close' to the mandelbrot*
 
 *Functions needed*
 - `t_complex	sq_compl(t_complex x);`
@@ -95,23 +99,23 @@ void	assign_pixel_color(int x, int y, double window_map, double color_map)
 }
 ```
 
-**Initialization**
+### Initialization
 
 *Necessary steps to start calculating. (setting all variables so that calculation can work)* 
 - Calculate the maps.
 
-**Render the image**
+### Render the image
 
 *Pushing the image to the actual window. Should be final step of first part.*
 
-### 2. Key handling.
+## 2. Key handling.
 *Make the Mandelbrot interactive.*
 
-**Moving around (offsetting the map function):**
+### Moving around (offsetting the map function):
 
-**Zooming in and out (scaling the map function):**
+### Zooming in and out (scaling the map function):
 
-**Window closing (closing, freeing and exiting without leaks):**
+### Window closing (closing, freeing and exiting without leaks):
 
-### 3. Add the Julia fractal.
+## 3. Add the Julia fractal.
 *Similar to the mandelbrot but a little different on the mathmatical side.*
