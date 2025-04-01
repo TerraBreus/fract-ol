@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 16:18:27 by zivanov        #+#    #+#                */
-/*   Updated: 2025/03/31 18:53:55 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/01 17:36:26 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	img_init(t_fractal *fractal)
 void	fractal_init(t_fractal *fractal)
 {
 	if (fractal->name == NULL)
-		ft_error_name();	//TODO name assignment should be in establish_fractal
+//		ft_error_name();	//TODO name assignment should be in establish_fractal
 
 	fractal->mlx_ptr = mlx_init();
 	if (fractal->mlx_ptr == NULL)
@@ -42,6 +42,6 @@ void	fractal_init(t_fractal *fractal)
 	fractal->window_map = ft_map(0, WIDTH,-2, 2);
 	fractal->zoom = 1;
 	fractal->hypotenuse_sq = HYPOTENUSE * HYPOTENUSE;
-	fractal->color_map = ft_map(BLACK, WHITE, 0, max_i);
+	fractal->color_map = ft_map(BLACK, WHITE, 0, fractal->max_i);
 	img_init(fractal);
 }	

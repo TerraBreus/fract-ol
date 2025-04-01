@@ -6,11 +6,35 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 18:29:26 by zivanov        #+#    #+#                */
-/*   Updated: 2025/03/31 18:50:22 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/01 18:00:31 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+/*
+** Function not really necessary.
+** May be reduced to the if statement
+** in which it is called.
+** Chose to make function for readibility
+*/
+
+bool	out_of_bounds(double a, double b, double c)
+{
+	if ((a*a) + (b*b) > (c*c))
+		return (true);
+	else
+		return (false);
+}
+
+void	put_pixel(t_img *img, int x, int y, int color)
+{
+	char	*dst;
+
+	dst = img->addr + (y * img->size_line + x * (img->bpp / 8));
+	*(unsigned int*)dst = color;
+}
+
 void	assign_pixel_color(int x, int y, t_fractal *fractal) 
 {
 	t_complex	z;
@@ -19,9 +43,9 @@ void	assign_pixel_color(int x, int y, t_fractal *fractal)
 	z.i = y * fractal->window_map;	//TODO ((y * window_map) * zoom) + offset
 	while (i < fractal->max_i)
 	{
-		z = sum_compl(sq_compl(z) + c);				//TODO
-		if (out_of_bounds(z.r, z.i, fractal->hypotenuse_sq) == true)	//TODO
-			put_pixel(fractal->img, x, y, fractal->color_map * i);	//TODO
+		z = sum_compl(sq_compl(z) + c);	
+		if (out_of_bounds(z.r, z.i, fractal->hypotenuse_sq) == true)
+			put_pixel(&fractal->img, x, y, fractal->color_map * i);
 		i++;
 	}
 	put_pixel(fractal->img, x, y, MANDELBROT_COLOR); 
