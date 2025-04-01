@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/04/01 16:57:43 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/01 17:03:47 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/01 18:53:33 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	ft_freestr(char *str)
 {
 	if (str != NULL)
 		free(str);
-	else
-		ft_putstr_fd("Trying to free NULL pointer\n", 2);
+	//else
+	//	ft_putstr_fd("Trying to free NULL pointer\n", 2); //TODO
 }
 
 /* Plan to use this function whenever an error
@@ -31,5 +31,5 @@ void	ft_freestr(char *str)
 void	exit_program(t_fractal *fractal)	//TODO
 {
 	ft_freestr(fractal->name);
-	exit();
+	exit(EXIT_FAILURE);
 }

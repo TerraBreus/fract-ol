@@ -1,6 +1,12 @@
-NAME = so_long
+NAME = fractol
 
-SRC = main.c
+SRC = 	exit_utils.c	\
+	init.c		\
+	input_parser.c	\
+	main.c		\
+	math_utils.c	\
+	render.c	\
+	str_utils.c
 SRC_DIR = src/
 
 OBJ_DIR = obj/

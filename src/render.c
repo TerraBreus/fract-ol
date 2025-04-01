@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 18:29:26 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/01 18:00:31 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/01 18:37:27 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 ** Chose to make function for readibility
 */
 
-bool	out_of_bounds(double a, double b, double c)
+static bool	out_of_bounds(double a, double b, double c)
 {
 	if ((a*a) + (b*b) > (c*c))
 		return (true);
@@ -27,7 +27,7 @@ bool	out_of_bounds(double a, double b, double c)
 		return (false);
 }
 
-void	put_pixel(t_img *img, int x, int y, int color)
+static void	put_pixel(t_img *img, int x, int y, int color)
 {
 	char	*dst;
 
@@ -35,7 +35,7 @@ void	put_pixel(t_img *img, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-void	assign_pixel_color(int x, int y, t_fractal *fractal) 
+static void	assign_pixel_color(int x, int y, t_fractal *fractal) 
 {
 	t_complex	z;
 
