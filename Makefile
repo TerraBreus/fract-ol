@@ -13,7 +13,7 @@ OBJ_DIR = obj/
 OBJ = $(addprefix $(OBJ_DIR), $(SRC:%.c=%.o))
 
 CC = gcc
-CCFLAGS = -Wextra -Werror -Wall
+CCFLAGS = -Wextra -Werror -Wall -g
 DEBUG = 
 
 MLX_DIR = mlx/
