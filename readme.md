@@ -8,7 +8,7 @@ A 42 project.
 	- [Normalizing for window and color mapping](#normalizing-for-window-and-color-mapping)
  3. [Key handling.](#key-handling)
 
-## Render the initial Mandelbrot
+## Render the initial Mandelbrot **DONE-ISH. Still need to implement colors.**
 *(non-interactive. pops up a second window displaying the mandelbrot)*
 
 ### The image structure:
