@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 16:18:27 by zivanov           #+#    #+#             */
-/*   Updated: 2025/04/02 17:51:43 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/02 19:21:26 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	fractal_init(t_fractal *fractal)
 	if (fractal->mlx_ptr == NULL)
 		exit_program(fractal);	//TODO
 
-	fractal->mlx_window = mlx_new_window(fractal->mlx_ptr, WIDTH, HEIGHT, "test");
+	fractal->mlx_window = mlx_new_window(fractal->mlx_ptr, WIDTH, HEIGHT, fractal->name); 
 	if (fractal->mlx_window == NULL)
 		exit_program(fractal);
 	

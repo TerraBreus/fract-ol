@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 13:55:25 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/02 17:15:24 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/02 19:36:58 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	fractal_init(t_fractal *fractal);
 void	fractal_render(t_fractal *fractal);
 
 //--GENERAL-UTILS-
+bool	correct_input(int argc, char **argv);
 void	establish_fractal_type(t_fractal *fractal, char *str);
 
 //-MATH-UTILS-
@@ -82,6 +83,8 @@ double	ft_map(double old_min, double old_max, double new_min, double new_max);
 
 //-STRING-UTILS-
 char	*ft_strdup(char *str);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+void	ft_putstr_fd(char *str, int fd);
 
 //-EXIT-UTILS-
 void	exit_program(t_fractal *fractal);
