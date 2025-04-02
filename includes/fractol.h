@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         ::::::::           */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol.h                                           :+:    :+:           */
 /*                                                      +:+                   */
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 13:55:25 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/02 10:35:26 by terramint        ###   ########.fr       */
+/*   Updated: 2025/04/02 17:15:24 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define WIDTH 600
 # define HEIGHT 600
 # define HYPOTENUSE 2
-# define MAX_ITERATIONS 100
+# define MAX_ITERATIONS 200
 
 
 # define WHITE 0xFFFFFF

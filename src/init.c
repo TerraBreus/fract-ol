@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 16:18:27 by zivanov           #+#    #+#             */
-/*   Updated: 2025/04/02 16:13:29 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/02 17:14:21 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	fractal_init(t_fractal *fractal)
 		exit_program(fractal);
 	
 	fractal->max_i = MAX_ITERATIONS;
-	fractal->window_map = ft_map(0, WIDTH,-2, 2);
+	fractal->window_map = ft_map(0, WIDTH,-1, 1);
 	fractal->zoom = 1;
 	fractal->hypotenuse_sq = HYPOTENUSE * HYPOTENUSE;
 	fractal->color_map = ft_map(BLACK, WHITE, 0, fractal->max_i);
