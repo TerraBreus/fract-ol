@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         ::::::::           */
-/*   fractol.h                                           :+:    :+:           */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                      +:+                   */
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 13:55:25 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/01 18:56:41 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/02 10:35:26 by terramint        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "mlx.h"
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdbool.h>
 
 /*---C O N S T A N T S---*/
 
@@ -30,7 +31,6 @@
 # define WHITE 0xFFFFFF
 # define BLACK 0x000000
 # define MANDELBROT_COLOR 0x800080
-*/
 
 /*TODO Ability to control quality (max iterations)*/
 
@@ -55,6 +55,7 @@ typedef struct s_fractal
 	char	*name;
 	int		max_i;
 	double	window_map;
+	double	color_map;
 	double	zoom;
 	double	hypotenuse_sq;
 }	t_fractal;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         ::::::::           */
-/*   main.c                                              :+:    :+:           */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                      +:+                   */
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 13:37:43 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/01 16:56:58 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/02 10:34:15 by terramint        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	establish_fractal_type(t_fractal *fractal, char *str)	//TODO
 {
 	fractal->name = ft_strdup(str);
 	if (fractal->name == NULL)
-		exit_program();
+		exit_program(fractal);
 }
 
 /* Currently under construction
@@ -30,7 +30,8 @@ void	establish_fractal_type(t_fractal *fractal, char *str)	//TODO
 **
 */
 
-int	main(int argc, char *argv[])
+//int	main(int argc, char *argv[])
+int	main(void)
 {
 	t_fractal	fractal;
 

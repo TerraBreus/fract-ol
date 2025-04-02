@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         ::::::::           */
-/*   init.c                                              :+:    :+:           */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                      +:+                   */
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 16:18:27 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/01 17:36:26 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/02 10:30:01 by terramint        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	fractal_init(t_fractal *fractal)
 	if (fractal->mlx_ptr == NULL)
 		exit_program(fractal);	//TODO
 
-	fractal->window = mlx_new_window(fractal->connection, WIDTH, HEIGHT, fractal->name);
+	fractal->mlx_window = mlx_new_window(fractal->mlx_ptr, WIDTH, HEIGHT, fractal->name);
 	if (fractal->mlx_ptr == NULL)
 		exit_program(fractal);
 	
