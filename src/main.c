@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         ::::::::           */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.c                                              :+:    :+:           */
 /*                                                      +:+                   */
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 13:37:43 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/02 10:34:15 by terramint        ###   ########.fr       */
+/*   Updated: 2025/04/02 16:57:29 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ int	main(void)
 //		return (-1);
 
 //	establish_fractal_type();		//TODO
-	
+	fractal.name = ft_strdup("yes");	
 	fractal_init(&fractal);
 	fractal_render(&fractal);		//TODO
-	
+	mlx_loop(fractal.mlx_ptr);	
 //	check_events();				//TODO
 	
 	return (0);
