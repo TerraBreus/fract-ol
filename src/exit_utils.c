@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/04/01 16:57:43 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/01 18:53:33 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/03 13:00:42 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void	ft_freestr(char *str)
 
 void	exit_program(t_fractal *fractal)	//TODO
 {
+	mlx_destroy_image(fractal->mlx_ptr, fractal->img.mlx_img);
+	mlx_destroy_window(fractal->mlx_ptr, fractal->mlx_window);
+	mlx_destroy_display(fractal->mlx_ptr);
+	free(fractal->mlx_ptr);
 	ft_freestr(fractal->name);
 	exit(EXIT_FAILURE);
 }
