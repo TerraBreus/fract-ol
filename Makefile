@@ -6,15 +6,16 @@ SRC = 	exit_utils.c	\
 	main.c		\
 	math_utils.c	\
 	render.c	\
-	str_utils.c
+	str_utils.c	\
+	events.c
 SRC_DIR = src/
 
 OBJ_DIR = obj/
 OBJ = $(addprefix $(OBJ_DIR), $(SRC:%.c=%.o))
 
 CC = gcc
-CCFLAGS = -Wextra -Werror -Wall -g
-DEBUG = 
+CCFLAGS = -Wextra -Werror -Wall
+DEBUG = -g 
 
 MLX_DIR = mlx/
 MLX_LIB = $(MLX_DIR)libmlx_Linux.a
