@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 18:29:26 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/03 15:58:33 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/03 19:11:49 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ static void	assign_pixel_color(int x, int y, t_fractal *fractal)
 	t_complex	c;
 	int		i;
 
-	c.r = (x - WIDTH / 2) * fractal->window_map;
-	c.i = (y - HEIGHT / 2) * fractal->window_map;	//TODO ((y * window_map) * zoom) + offset
+	c.r = (x - WIDTH / 2) * fractal->window_map * fractal->zoom;
+	c.i = (y - HEIGHT / 2) * fractal->window_map *fractal->zoom;	//TODO ((y * window_map) * zoom) + offset
 	z.r = c.r;
 	z.i = c.i;
 	i = 0;
