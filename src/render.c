@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 18:29:26 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/02 17:50:55 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/03 15:58:33 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	assign_pixel_color(int x, int y, t_fractal *fractal)
 	i = 0;
 	while (i < fractal->max_i)
 	{
-		z = sum_compl(sq_compl(z),  c);	
+		z = sum_compl(sq_compl(z),  c);	//read as z^2 + c	
 		if (out_of_bounds(z.r, z.i, fractal->hypotenuse_sq) == true)
 		{
 			put_pixel(&fractal->img, x, y, fractal->color_map * i);
@@ -76,5 +76,5 @@ void	fractal_render(t_fractal *fractal)
 	}
 	if (mlx_put_image_to_window(fractal->mlx_ptr, \
 			fractal->mlx_window, fractal->img.mlx_img, 0, 0) == -1)
-		exit_program(fractal);
+		exit_program(fractal, EXIT_FAILURE);
 }
