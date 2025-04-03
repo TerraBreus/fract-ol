@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 13:55:25 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/02 19:36:58 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/03 14:54:25 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@
 # define WHITE 0xFFFFFF
 # define BLACK 0x000000
 # define MANDELBROT_COLOR 0x800080
+
+//--KEYPRESS-CONTSANTS--
+# define DESTROY_WINDOW 17
+# define ESCAPE 65307
 
 /*TODO Ability to control quality (max iterations)*/
 
@@ -87,6 +91,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_putstr_fd(char *str, int fd);
 
 //-EXIT-UTILS-
-void	exit_program(t_fractal *fractal);
+void	exit_program(t_fractal *fractal, int exit_status);
+
+//-EVENT-UTILS
+void	check_events(t_fractal *fractal);
+
 
 #endif
