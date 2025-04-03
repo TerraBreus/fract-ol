@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 13:37:43 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/02 19:37:36 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/03 13:01:17 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,6 @@ void	establish_fractal_type(t_fractal *fractal, char *str)	//TODO
 		exit_program(fractal);
 }
 
-/* Currently under construction
-** Phase 1: rendering the initial mandelbrot.
-**
-*/
-
 int	main(int argc, char *argv[])
 {
 	t_fractal	fractal;
@@ -39,9 +34,9 @@ int	main(int argc, char *argv[])
 
 	establish_fractal_type(&fractal, argv[1]);
 	fractal_init(&fractal);
-	fractal_render(&fractal);		//TODO
-	mlx_loop(fractal.mlx_ptr);	
+	fractal_render(&fractal);
 //	check_events();				//TODO
+	mlx_loop(fractal.mlx_ptr);	
 	
 	return (0);
 }
