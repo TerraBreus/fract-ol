@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 13:37:43 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/03 13:01:17 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/03 15:40:29 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	establish_fractal_type(t_fractal *fractal, char *str)	//TODO
 {
 	fractal->name = ft_strdup(str);
 	if (fractal->name == NULL)
-		exit_program(fractal);
+		exit(EXIT_FAILURE);
 }
 
 int	main(int argc, char *argv[])
@@ -33,9 +33,10 @@ int	main(int argc, char *argv[])
 		return (-1);
 
 	establish_fractal_type(&fractal, argv[1]);
+//	fractal_memset()			//TODO (set all values to NULL)
 	fractal_init(&fractal);
 	fractal_render(&fractal);
-//	check_events();				//TODO
+	check_events(&fractal);
 	mlx_loop(fractal.mlx_ptr);	
 	
 	return (0);
