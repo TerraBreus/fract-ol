@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <stdio.h>	//TODO
 
 int	close_on_escape(int key, t_fractal *fractal)
 {
