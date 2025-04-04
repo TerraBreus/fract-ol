@@ -18,21 +18,13 @@
 ** can try to render the mandelbrot.
 */
 
-void	establish_fractal_type(t_fractal *fractal, char *str)	//TODO
-{
-	fractal->name = ft_strdup(str);
-	if (fractal->name == NULL)
-		exit(EXIT_FAILURE);
-}
-
 int	main(int argc, char *argv[])
 {
 	t_fractal	fractal;
 
-	if (correct_input(argc, argv) == false)	//TODO
+	if (is_input_parsed(&fractal, argc, argv) == false)	//TODO
 		return (-1);
 
-	establish_fractal_type(&fractal, argv[1]);
 //	fractal_memset()			//TODO (set all values to NULL)
 	fractal_init(&fractal);
 	fractal_render(&fractal);

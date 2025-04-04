@@ -64,6 +64,10 @@ typedef struct s_fractal
 	double	x_offset;
 	double	y_offset;
 	double	hypotenuse_sq;
+
+	bool	is_julia;
+	double	julia_r;
+	double	julia_i;
 }	t_fractal;
 
 typedef struct s_complex
@@ -79,8 +83,7 @@ void	fractal_init(t_fractal *fractal);
 void	fractal_render(t_fractal *fractal);
 
 //--GENERAL-UTILS-
-bool	correct_input(int argc, char **argv);
-void	establish_fractal_type(t_fractal *fractal, char *str);
+bool	is_input_parsed(t_fractal *fractal, int argc, char **argv);
 
 //-MATH-UTILS-
 t_complex	sum_compl(t_complex a, t_complex b);
