@@ -34,16 +34,29 @@ static void	put_pixel(t_img *img, int x, int y, double color)
 	*(unsigned int*)dst = color;
 }
 
+void	check_fractal_type(t_fractal *fractal, t_complex *z, t_complex *c)
+{
+	if (fractal->is_julia == true)
+	{
+		c->r = fractal->julia_r;
+		c->i = fractal->julia_i;
+	}
+	else
+	{
+		c->r = z->r;
+		c->i = z->i;
+	}
+}
+
 static void	assign_pixel_color(int x, int y, t_fractal *fractal) 
 {
 	t_complex	z;
 	t_complex	c;
 	int		i;
 
-	c.r = (x + fractal->x_offset - WIDTH / 2) * fractal->window_map * fractal->zoom;
-	c.i = (y + fractal->y_offset - HEIGHT / 2) * fractal->window_map * fractal->zoom;
-	z.r = c.r;
-	z.i = c.i;
+	z.r = (x + fractal->x_offset - WIDTH / 2) * fractal->window_map * fractal->zoom;
+	z.i = (y + fractal->y_offset - HEIGHT / 2) * fractal->window_map * fractal->zoom * -1;
+	check_fractal_type(fractal, &z, &c);
 	i = 0;
 	while (i < fractal->max_i)
 	{
