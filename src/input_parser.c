@@ -27,8 +27,8 @@ static bool	set_julia(t_fractal *fractal, char **argv)
 	if (fractal->name == NULL)
 		exit_program(fractal, EXIT_FAILURE);
 	fractal->is_julia = true;
-	fractal->julia_r = -0.835;
-	fractal->julia_i = -0.2321;
+	fractal->julia_r = a_to_julia(argv[2]);
+	fractal->julia_i = a_to_julia(argv[3]);
 	return (true);
 }
 
@@ -42,10 +42,7 @@ bool	is_input_parsed(t_fractal *fractal, int argc, char **argv)		//TODO Implemen
 	else if (argc == 4)
 	{
 		if (ft_strncmp(argv[1], "julia", 6) == 0)
-		{
 			return (set_julia(fractal, argv));
-			//TODO Check how to convert parameters
-		}
 	}
 	ft_putstr_fd(USAGE, 2);
 	return (false);

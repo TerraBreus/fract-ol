@@ -26,9 +26,14 @@ Welcome to the how_to_fractal instructions page!\n\
 Simply put, you have 2 options: \n\n\
 ./fractol mandelbrot\n\
 or\n\
-./fractol julia <1-10>\n\n\
-For the julia set an extra number between 1 and 10 \n\
-is required to establish which constants will be used.\n"
+./fractol julia <real> <imaginary>\n\n\
+The real and imaginary numbers for the julia set\n\
+can take any integer (within INT_MIN and INT_MAX)\n\
+and will be converted as such:\n\
+2453 -> 0.2453\n\n\
+An example:\n\
+./fractol julia -7269 1\n\
+This would result in the constant c = -0.7269 + 0.1i\n"
 /*---C O N S T A N T S---*/
 
 # define WIDTH 600
@@ -93,6 +98,7 @@ void	fractal_render(t_fractal *fractal);
 
 //--GENERAL-UTILS-
 bool	is_input_parsed(t_fractal *fractal, int argc, char **argv);
+double	a_to_julia(const char *nptr);
 
 //-MATH-UTILS-
 t_complex	sum_compl(t_complex a, t_complex b);

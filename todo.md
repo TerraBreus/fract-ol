@@ -4,6 +4,7 @@
 - Implement reset button
 - Initial memset so that all relevant pointers are set to NULL in case we need to exit program on failure (and don't run into segfaults when freeing)
 - Print string on window.
+
 - Implement Julia fractal (might take some time)
 	- Take in parameters (aka some integers or convert them to doubles if you want)
 		If julia then formula will be:
