@@ -20,6 +20,15 @@
 # include <stdlib.h>
 # include <stdbool.h>
 
+/*---I N S T R U C T I O N S---*/
+# define USAGE "\
+Welcome to the how_to_fractal instructions page!\n\
+Simply put, you have 2 options: \n\n\
+./fractol mandelbrot\n\
+or\n\
+./fractol julia <1-10>\n\n\
+For the julia set an extra number between 1 and 10 \n\
+is required to establish which constants will be used.\n"
 /*---C O N S T A N T S---*/
 
 # define WIDTH 600

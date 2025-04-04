@@ -12,11 +12,6 @@
 
 #include "fractol.h"
 
-static void	show_usage(void)			//TODO implement better usage text
-{	
-	ft_putstr_fd("Usage: ./fractol mandelbrot\n", 2);
-}
-
 static bool	set_mandelbrot(t_fractal *fractal, char *str)
 {
 	fractal->name = ft_strdup(str);
@@ -52,6 +47,6 @@ bool	is_input_parsed(t_fractal *fractal, int argc, char **argv)		//TODO Implemen
 			//TODO Check how to convert parameters
 		}
 	}
-	show_usage();
+	ft_putstr_fd(USAGE, 2);
 	return (false);
 }
