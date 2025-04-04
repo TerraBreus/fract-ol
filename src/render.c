@@ -41,7 +41,7 @@ static void	assign_pixel_color(int x, int y, t_fractal *fractal)
 	int		i;
 
 	c.r = (x + fractal->x_offset - WIDTH / 2) * fractal->window_map * fractal->zoom;
-	c.i = (y + fractal->y_offset - HEIGHT / 2) * fractal->window_map *fractal->zoom;	//TODO ((y * window_map) * zoom) + offset
+	c.i = (y + fractal->y_offset - HEIGHT / 2) * fractal->window_map * fractal->zoom;
 	z.r = c.r;
 	z.i = c.i;
 	i = 0;
