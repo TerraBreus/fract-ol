@@ -25,7 +25,7 @@ int	close_on_escape(int key, t_fractal *fractal)
 			fractal->y_offset -= 10;
 		if (key == 65361) //left
 			fractal->x_offset -= 10;
-		if (key == 65364) //right
+		if (key == 65363) //right
 			fractal->x_offset += 10;
 		fractal_render(fractal);
 	}
