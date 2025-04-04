@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         ::::::::           */
-/*   fractol.h                                           :+:    :+:           */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                      +:+                   */
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 13:55:25 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/03 14:54:25 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/04 10:00:46 by terramint        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define WIDTH 600
 # define HEIGHT 600
 # define HYPOTENUSE 2
-# define MAX_ITERATIONS 200
+# define MAX_ITERATIONS 20
 
 
 # define WHITE 0xFFFFFF
@@ -61,6 +61,8 @@ typedef struct s_fractal
 	double	window_map;
 	double	color_map;
 	double	zoom;
+	double	x_offset;
+	double	y_offset;
 	double	hypotenuse_sq;
 }	t_fractal;
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         ::::::::           */
-/*   events.c                                            :+:    :+:           */
+/*   events.c                                           :+:      :+:    :+:   */
 /*                                                      +:+                   */
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/04/03 13:58:56 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/03 19:31:21 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/04 10:10:34 by terramint        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,18 @@ int	close_on_escape(int key, t_fractal *fractal)
 {
 	if (key == ESCAPE)
 		exit_program(fractal, EXIT_SUCCESS);
+	else if (key >= 65361 && key <= 65364)
+	{
+		if (key == 65364)
+			fractal->y_offset += 10;
+		if (key == 65362)	//up
+			fractal->y_offset -= 10;
+		if (key == 65361) //left
+			fractal->x_offset -= 10;
+		if (key == 65364) //right
+			fractal->x_offset += 10;
+		fractal_render(fractal);
+	}
 	return (0);
 }
 

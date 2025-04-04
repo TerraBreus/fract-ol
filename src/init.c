@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                              :+:    :+:           */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 16:18:27 by zivanov           #+#    #+#             */
-/*   Updated: 2025/04/03 15:40:57 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/04 10:01:27 by terramint        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	fractal_init(t_fractal *fractal)
 		exit_program(fractal, EXIT_FAILURE);
 	
 	fractal->max_i = MAX_ITERATIONS;
+	fractal->x_offset = 0.0;
+	fractal->y_offset = 0.0;
 	fractal->window_map = ft_map(0, WIDTH,-1, 1);
 	fractal->zoom = 1.0;
 	fractal->hypotenuse_sq = HYPOTENUSE * HYPOTENUSE;
