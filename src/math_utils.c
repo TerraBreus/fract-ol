@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 18:17:15 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/01 18:00:50 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/05 14:52:00 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_complex	sum_compl(t_complex a, t_complex b)
 t_complex	sq_compl(t_complex z)
 {
 	t_complex	result;
-	
+
 	result.r = (z.r * z.r) - (z.i * z.i);
 	result.i = (2 * z.r * z.i);
 	return (result);

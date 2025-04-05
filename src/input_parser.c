@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 15:02:05 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/05 14:43:31 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/05 15:06:59 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static bool	set_mandelbrot(t_fractal *fractal, char *str)
 
 static bool	parse_julia_set(t_fractal *fractal, const char *str)
 {
-	int	julia_set;
-	double	matrix[10][2] = JULIA;
+	int				julia_set;
+	static double	matrix[10][2] = JULIA;
 
 	julia_set = ft_atoi(str);
 	if (julia_set >= 0 && julia_set <= 9)

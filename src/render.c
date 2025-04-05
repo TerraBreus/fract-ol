@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         ::::::::           */
-/*   render.c                                           :+:      :+:    :+:   */
+/*   render.c                                            :+:    :+:           */
 /*                                                      +:+                   */
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 18:29:26 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/04 10:03:00 by terramint        ###   ########.fr       */
+/*   Updated: 2025/04/05 15:05:44 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 static bool	out_of_bounds(double a, double b, double c)
 {
-	if ((a*a) + (b*b) > (c*c))
+	if ((a * a) + (b * b) > (c * c))
 		return (true);
 	else
 		return (false);
@@ -30,8 +30,9 @@ static bool	out_of_bounds(double a, double b, double c)
 static void	put_pixel(t_img *img, int x, int y, double color)
 {
 	char	*dst;
+
 	dst = img->addr + (y * img->size_line + x * (img->bpp / 8));
-	*(unsigned int*)dst = color;
+	*(unsigned int *) dst = color;
 }
 
 void	check_fractal_type(t_fractal *fractal, t_complex *z, t_complex *c)
@@ -48,11 +49,11 @@ void	check_fractal_type(t_fractal *fractal, t_complex *z, t_complex *c)
 	}
 }
 
-static void	assign_pixel_color(int x, int y, t_fractal *fractal) 
+static void	assign_pixel_color(int x, int y, t_fractal *fractal)
 {
 	t_complex	z;
 	t_complex	c;
-	int		i;
+	int			i;
 
 	z.r = (x + fractal->x_offset - WIDTH / 2) * fractal->window_map * fractal->zoom;
 	z.i = (y + fractal->y_offset - HEIGHT / 2) * fractal->window_map * fractal->zoom * -1;
@@ -60,7 +61,7 @@ static void	assign_pixel_color(int x, int y, t_fractal *fractal)
 	i = 0;
 	while (i < fractal->max_i)
 	{
-		z = sum_compl(sq_compl(z),  c);	//read as z^2 + c	
+		z = sum_compl(sq_compl(z), c);
 		if (out_of_bounds(z.r, z.i, fractal->hypotenuse_sq) == true)
 		{
 			put_pixel(&fractal->img, x, y, fractal->color_map * i);
@@ -68,7 +69,7 @@ static void	assign_pixel_color(int x, int y, t_fractal *fractal)
 		}
 		i++;
 	}
-	put_pixel(&fractal->img, x, y, MANDELBROT_COLOR); 
+	put_pixel(&fractal->img, x, y, MANDELBROT_COLOR);
 }
 
 void	fractal_render(t_fractal *fractal)

@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 13:37:43 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/05 12:47:07 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/05 14:59:32 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,11 @@ int	main(int argc, char *argv[])
 	t_fractal	fractal;
 
 	fractal_memset(&fractal);
-	if (is_input_parsed(&fractal, argc, argv) == false)	//TODO
+	if (is_input_parsed(&fractal, argc, argv) == false)
 		return (-1);
-
 	fractal_init(&fractal);
 	fractal_render(&fractal);
 	check_events(&fractal);
-	mlx_loop(fractal.mlx_ptr);	
-	
+	mlx_loop(fractal.mlx_ptr);
 	return (0);
 }
