@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         ::::::::           */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol.h                                           :+:    :+:           */
 /*                                                      +:+                   */
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 13:55:25 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/04 10:00:46 by terramint        ###   ########.fr       */
+/*   Updated: 2025/04/05 13:25:20 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,27 @@
 
 /*---I N S T R U C T I O N S---*/
 # define USAGE "\
-Welcome to the how_to_fractal instructions page!\n\
-Simply put, you have 2 options: \n\n\
+Usage:\n\
 ./fractol mandelbrot\n\
 or\n\
-./fractol julia <real> <imaginary>\n\n\
-The real and imaginary numbers for the julia set\n\
-can take any integer (within INT_MIN and INT_MAX)\n\
-and will be converted as such:\n\
-2453 -> 0.2453\n\n\
-An example:\n\
-./fractol julia -7269 1\n\
-This would result in the constant c = -0.7269 + 0.1i\n"
+./fractol julia <0-9>\n\n \
+The flag -i can be given to define the amount of iterations\n \
+which consequently defines the quality of the fractal\n \
+Example: ./fractol julia 2 -i 20\n \
+To see the possible constants for the julia set type:\n\
+./fractol julia_constants\n"
+
+# define JULIA_CONSTANTS "\
+0. c = 0.285 + 0i\n \
+1. c = 0.285 + 0.01i\n \
+2. c = 0.45 + 0.1428i \n \
+3. c = -0.70176 - 0.3842i \n \
+4. c = -0.835 - 0.2321\n \
+5. c = -0.8 + 0.156i\n \
+6. c = -0.7269 + 0.1889i\n \
+7. c = 0 + 0.8i\n \
+8. c = 0.35 + 0.35i\n \
+9. c = 0.4 + 0.4i\n"
 /*---C O N S T A N T S---*/
 
 # define WIDTH 600
@@ -49,8 +58,10 @@ This would result in the constant c = -0.7269 + 0.1i\n"
 //--KEYPRESS-CONTSANTS--
 # define DESTROY_WINDOW 17
 # define ESCAPE 65307
-
-/*TODO Ability to control quality (max iterations)*/
+# define ARROW_UP 65362
+# define ARROW_DOWN 65364
+# define ARROW_LEFT 65361
+# define ARROW_RIGHT 65363
 
 /*---S T R U C T U R E S---*/
 
@@ -98,12 +109,12 @@ void	fractal_render(t_fractal *fractal);
 
 //--GENERAL-UTILS-
 bool	is_input_parsed(t_fractal *fractal, int argc, char **argv);
-double	a_to_julia(const char *nptr);
 
 //-MATH-UTILS-
 t_complex	sum_compl(t_complex a, t_complex b);
 t_complex	sq_compl(t_complex z);
 double	ft_map(double old_min, double old_max, double new_min, double new_max);
+int		ft_atoi(const char *str);
 
 //-STRING-UTILS-
 char	*ft_strdup(char *str);
@@ -112,6 +123,7 @@ void	ft_putstr_fd(char *str, int fd);
 
 //-EXIT-UTILS-
 void	exit_program(t_fractal *fractal, int exit_status);
+void	exit_on_julia_constants(void);
 
 //-EVENT-UTILS
 void	check_events(t_fractal *fractal);

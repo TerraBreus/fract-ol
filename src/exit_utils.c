@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/04/01 16:57:43 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/03 13:54:25 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/05 13:16:59 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,10 @@ void	exit_program(t_fractal *fractal, int exit_status)
 	if (fractal->name != NULL)
 		free(fractal->name);
 	exit(exit_status);
+}
+
+void	exit_on_julia_constants(void)	
+{
+	ft_putstr_fd(JULIA_CONSTANTS, 1);
+	exit(EXIT_SUCCESS);
 }

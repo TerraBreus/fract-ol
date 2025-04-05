@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <fractol.h>
 
 /*
 Train of thought:
@@ -58,12 +57,10 @@ static int	ft_calc_int(const char *str, size_t length, int conv_int)
 	return (conv_int);
 }
 
-double	a_to_julia(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int			conv_int;
 	int			is_minus;
-	int			length;
-	double			result;
 
 	is_minus = 1;
 	conv_int = 0;
@@ -77,11 +74,14 @@ double	a_to_julia(const char *nptr)
 	}
 	while (*nptr == '0')
 		nptr++;
-	length = ft_get_length(nptr);
-	if (length == 0)
-		return (0.0);
-	conv_int = ft_calc_int(nptr, length, conv_int);
+	conv_int = ft_calc_int(nptr, ft_get_length(nptr), conv_int);
 	conv_int *= is_minus;
-	result = (double)conv_int / (length * 10);
-	return (result);
+	return (conv_int);
 }
+
+// #include <unistd.h>
+
+// int main()
+// {
+// 	printf("%d", ft_atoi("-2147483648"));
+// }

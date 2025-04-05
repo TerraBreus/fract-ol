@@ -8,7 +8,7 @@ SRC = 	exit_utils.c	\
 	render.c	\
 	str_utils.c	\
 	events.c	\
-	julia_a_to_double.c
+	ft_atoi.c
 SRC_DIR = src/
 
 OBJ_DIR = obj/

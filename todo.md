@@ -1,11 +1,4 @@
 ### Fract-ol
-- Add macros for keypresses.
-
-- Refactor functions from events into handlers that go to the correct function if a specific key is pressed.
-
-- Implement reset button
-
-- Initial memset so that all relevant pointers are set to NULL in case we need to exit program on failure (and don't run into segfaults when freeing)
 
 - Fix zoom issue when offset. (Apparently you should add offset after you have multiplied)
 
@@ -13,17 +6,16 @@
 
 - Implement Julia fractal (might take some time)
 	- Take in parameters (aka some integers or convert them to doubles if you want)
-		If julia then formula will be:
-			z: The coordinate from the pixels.
-			c: Some constant defined by the Julia.
-		If Mandelbrot then formula will be;
-			z: The coordinate from the pixels.
-			c: The coordinate from the pixels.
 	- Establish fractal type and parse relevant parameters if Julia
+		argv[2] should be a number between 0-9;
+			Do I wish to convert it first and then simply check whether it is between 0 and 9?
 		- correct_input -> parse_input
 		- Parse fractal through the function that 
 	- Render with the updated Julia set 
 		- check_fractal_type() function.
+
+- Implement window size parameter
+
 - Norminette
 
 - Implement Phoenix

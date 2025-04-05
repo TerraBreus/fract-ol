@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   init.c                                              :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 16:18:27 by zivanov           #+#    #+#             */
-/*   Updated: 2025/04/04 10:01:27 by terramint        ###   ########.fr       */
+/*   Updated: 2025/04/05 12:46:18 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	fractal_init(t_fractal *fractal)
 	if (fractal->mlx_window == NULL)
 		exit_program(fractal, EXIT_FAILURE);
 	
-	fractal->max_i = MAX_ITERATIONS;
+	if (fractal->max_i <= 0)
+		fractal->max_i = MAX_ITERATIONS;
 	fractal->x_offset = 0.0;
 	fractal->y_offset = 0.0;
 	fractal->window_map = ft_map(0, WIDTH,-1, 1);
