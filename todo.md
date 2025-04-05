@@ -2,17 +2,10 @@
 
 - Fix zoom issue when offset. (Apparently you should add offset after you have multiplied)
 
-- Print string on window.
+- Parse sets for julia.
+	Cannot use a macro. Need an extra .c file that sets the julia constants based on a number between 0 and 9.
 
-- Implement Julia fractal (might take some time)
-	- Take in parameters (aka some integers or convert them to doubles if you want)
-	- Establish fractal type and parse relevant parameters if Julia
-		argv[2] should be a number between 0-9;
-			Do I wish to convert it first and then simply check whether it is between 0 and 9?
-		- correct_input -> parse_input
-		- Parse fractal through the function that 
-	- Render with the updated Julia set 
-		- check_fractal_type() function.
+- Print string on window.
 
 - Implement window size parameter
 

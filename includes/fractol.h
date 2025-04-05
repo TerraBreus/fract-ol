@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol.h                                           :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:55:25 by zivanov           #+#    #+#             */
-/*   Updated: 2025/04/05 15:58:19 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/04/05 16:48:08 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ To see the possible constants for the julia set type:\n\
 In addition, the flag `-i` can be given to define the amount of iterations\n\
 which consequently defines the quality of the fractal\n\
 If no flag or an incorrect flag is given, a standard iteration of 20 is put through\n\
-Example: ./fractol julia 2 -i 20\n"
+Example: ./fractol julia 2 -i 20\n\n"
 
 # define JULIA_CONSTANTS " \
 0. c = 0.285 + 0i\n \
@@ -58,6 +58,7 @@ Example: ./fractol julia 2 -i 20\n"
 # define BLACK 0x000000
 # define MANDELBROT_COLOR 0x800080
 
+//TODO
 # define JULIA \
     { {0.285, 0.0}, \
       {0.285, 0.01}, \
@@ -130,6 +131,10 @@ t_compl	sum_compl(t_compl a, t_compl b);
 t_compl	sq_compl(t_compl z);
 double	ft_map(double old_min, double old_max, double new_min, double new_max);
 int		ft_atoi(const char *str);
+
+//-FRACTAL-UTILS-
+bool	set_mandelbrot(t_fractal *fractal, char *str);
+bool	set_julia(t_fractal *fractal, char **argv);
 
 //-STRING-UTILS-
 char	*ft_strdup(char *str);

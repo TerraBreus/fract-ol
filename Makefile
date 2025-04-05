@@ -8,7 +8,8 @@ SRC = 	exit_utils.c	\
 	render.c	\
 	str_utils.c	\
 	events.c	\
-	ft_atoi.c
+	ft_atoi.c	\
+	define_fractal.c
 SRC_DIR = src/
 
 OBJ_DIR = obj/

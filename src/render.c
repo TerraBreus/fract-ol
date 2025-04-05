@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render.c                                           :+:      :+:    :+:   */
+/*   render.c                                            :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 18:29:26 by zivanov           #+#    #+#             */
-/*   Updated: 2025/04/05 15:58:27 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/04/05 16:29:55 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,12 @@ static void	assign_pixel_color(int x, int y, t_fractal *fractal)
 {
 	t_compl	z;
 	t_compl	c;
-	int			i;
+	int		i;
+	double	zoom_and_map;
 
-	z.r = (x + fractal->x_offset - WIDTH / 2) * fractal->window_map * fractal->zoom;
-	z.i = (y + fractal->y_offset - HEIGHT / 2) * fractal->window_map * fractal->zoom * -1;
+	zoom_and_map = fractal->window_map * fractal->zoom;
+	z.r = (x + fractal->x_offset - WIDTH / 2) * zoom_and_map;
+	z.i = (y + fractal->y_offset - HEIGHT / 2) * zoom_and_map * -1;
 	check_fractal_type(fractal, &z, &c);
 	i = 0;
 	while (i < fractal->max_i)

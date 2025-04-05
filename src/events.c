@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/04/03 13:58:56 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/05 12:49:06 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/05 16:26:52 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,15 @@ static int	mouse_events(int key, int x, int y, t_fractal *fractal)
 
 void	check_events(t_fractal *fractal)
 {
-	mlx_key_hook(fractal->mlx_window, keyboard_events, fractal);
-	mlx_hook(fractal->mlx_window, DESTROY_WINDOW, 1L << 0, close_on_destroy, fractal);
-	mlx_mouse_hook(fractal->mlx_window, mouse_events, fractal);
+	mlx_key_hook(fractal->mlx_window, \
+			keyboard_events, \
+			fractal);
+	mlx_hook(fractal->mlx_window, \
+			DESTROY_WINDOW, \
+			1L << 0, \
+			close_on_destroy, \
+			fractal);
+	mlx_mouse_hook(fractal->mlx_window, \
+			mouse_events, \
+			fractal);
 }
