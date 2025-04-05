@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 15:02:05 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/05 13:28:36 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/05 14:43:31 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,26 @@ static bool	set_mandelbrot(t_fractal *fractal, char *str)
 	return (true);
 }
 
+static bool	parse_julia_set(t_fractal *fractal, const char *str)
+{
+	int	julia_set;
+	double	matrix[10][2] = JULIA;
+
+	julia_set = ft_atoi(str);
+	if (julia_set >= 0 && julia_set <= 9)
+	{
+		fractal->julia_r = matrix[julia_set][0];
+		fractal->julia_i = matrix[julia_set][1];
+		return (true);
+	}
+	ft_putstr_fd(USAGE, 2);
+	return (false);
+}
+
 static bool	set_julia(t_fractal *fractal, char **argv)
 {
+	if (parse_julia_set(fractal, argv[2]) == false)
+		return (false);
 	fractal->name = ft_strdup(argv[1]);
 	if (fractal->name == NULL)
 		exit_program(fractal, EXIT_FAILURE);

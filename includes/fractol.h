@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 13:55:25 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/05 13:25:20 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/05 14:49:49 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,21 @@
 # include <stdbool.h>
 
 /*---I N S T R U C T I O N S---*/
-# define USAGE "\
-Usage:\n\
+
+# define USAGE "\n\
+Usage:\n\n\
 ./fractol mandelbrot\n\
 or\n\
-./fractol julia <0-9>\n\n \
-The flag -i can be given to define the amount of iterations\n \
-which consequently defines the quality of the fractal\n \
-Example: ./fractol julia 2 -i 20\n \
+./fractol julia <0-9>\n\n\
+For the julia fractal, there are 10 sets in total to choose from.\n\
 To see the possible constants for the julia set type:\n\
-./fractol julia_constants\n"
+./fractol julia_constants\n\n\
+In addition, the flag `-i` can be given to define the amount of iterations\n\
+which consequently defines the quality of the fractal\n\
+If no flag or an incorrect flag is given, a standard iteration of 20 is put through\n\
+Example: ./fractol julia 2 -i 20\n"
 
-# define JULIA_CONSTANTS "\
+# define JULIA_CONSTANTS " \
 0. c = 0.285 + 0i\n \
 1. c = 0.285 + 0.01i\n \
 2. c = 0.45 + 0.1428i \n \
@@ -43,6 +46,7 @@ To see the possible constants for the julia set type:\n\
 7. c = 0 + 0.8i\n \
 8. c = 0.35 + 0.35i\n \
 9. c = 0.4 + 0.4i\n"
+
 /*---C O N S T A N T S---*/
 
 # define WIDTH 600
@@ -54,6 +58,18 @@ To see the possible constants for the julia set type:\n\
 # define WHITE 0xFFFFFF
 # define BLACK 0x000000
 # define MANDELBROT_COLOR 0x800080
+
+# define JULIA \
+    { {0.285, 0.0}, \
+      {0.285, 0.01}, \
+      {0.45, 0.1428}, \
+      {-0.70176, -0.3842}, \
+      {-0.835, -0.2321}, \
+      {-0.8, 0.156}, \
+      {-0.7269, 0.1889}, \
+      {0.0, 0.8}, \
+      {0.35, 0.35}, \
+      {0.4, 0.4} }
 
 //--KEYPRESS-CONTSANTS--
 # define DESTROY_WINDOW 17
