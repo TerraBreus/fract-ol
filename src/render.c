@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                         ::::::::           */
-/*   render.c                                            :+:    :+:           */
-/*                                                      +:+                   */
-/*   By: zivanov <marvin@42.fr>                        +#+                    */
-/*                                                    +#+                     */
-/*   Created: 2025/03/31 18:29:26 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/05 15:05:44 by zivanov        ########   odam.nl        */
+/*                                                        :::      ::::::::   */
+/*   render.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/31 18:29:26 by zivanov           #+#    #+#             */
+/*   Updated: 2025/04/05 15:58:27 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	put_pixel(t_img *img, int x, int y, double color)
 	*(unsigned int *) dst = color;
 }
 
-void	check_fractal_type(t_fractal *fractal, t_complex *z, t_complex *c)
+void	check_fractal_type(t_fractal *fractal, t_compl *z, t_compl *c)
 {
 	if (fractal->is_julia == true)
 	{
@@ -51,8 +51,8 @@ void	check_fractal_type(t_fractal *fractal, t_complex *z, t_complex *c)
 
 static void	assign_pixel_color(int x, int y, t_fractal *fractal)
 {
-	t_complex	z;
-	t_complex	c;
+	t_compl	z;
+	t_compl	c;
 	int			i;
 
 	z.r = (x + fractal->x_offset - WIDTH / 2) * fractal->window_map * fractal->zoom;

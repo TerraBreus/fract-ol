@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                         ::::::::           */
-/*   fractol.h                                           :+:    :+:           */
-/*                                                      +:+                   */
-/*   By: zivanov <marvin@42.fr>                        +#+                    */
-/*                                                    +#+                     */
-/*   Created: 2025/03/31 13:55:25 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/05 14:49:49 by zivanov        ########   odam.nl        */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/31 13:55:25 by zivanov           #+#    #+#             */
+/*   Updated: 2025/04/05 15:58:19 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ Example: ./fractol julia 2 -i 20\n"
 # define HEIGHT 600
 # define HYPOTENUSE 2
 # define MAX_ITERATIONS 20
-
 
 # define WHITE 0xFFFFFF
 # define BLACK 0x000000
@@ -115,7 +114,7 @@ typedef struct s_complex
 {
 	double	r;
 	double	i;
-}	t_complex;
+}	t_compl;
 
 /*---P R O T O T Y P E S---*/
 
@@ -127,14 +126,14 @@ void	fractal_render(t_fractal *fractal);
 bool	is_input_parsed(t_fractal *fractal, int argc, char **argv);
 
 //-MATH-UTILS-
-t_complex	sum_compl(t_complex a, t_complex b);
-t_complex	sq_compl(t_complex z);
+t_compl	sum_compl(t_compl a, t_compl b);
+t_compl	sq_compl(t_compl z);
 double	ft_map(double old_min, double old_max, double new_min, double new_max);
 int		ft_atoi(const char *str);
 
 //-STRING-UTILS-
 char	*ft_strdup(char *str);
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_putstr_fd(char *str, int fd);
 
 //-EXIT-UTILS-
@@ -143,6 +142,5 @@ void	exit_on_julia_constants(void);
 
 //-EVENT-UTILS
 void	check_events(t_fractal *fractal);
-
 
 #endif

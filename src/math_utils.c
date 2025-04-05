@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                         ::::::::           */
-/*   math_utils.c                                        :+:    :+:           */
-/*                                                      +:+                   */
-/*   By: zivanov <marvin@42.fr>                        +#+                    */
-/*                                                    +#+                     */
-/*   Created: 2025/03/31 18:17:15 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/05 14:52:00 by zivanov        ########   odam.nl        */
+/*                                                        :::      ::::::::   */
+/*   math_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/31 18:17:15 by zivanov           #+#    #+#             */
+/*   Updated: 2025/04/05 15:57:57 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-t_complex	sum_compl(t_complex a, t_complex b)
+t_compl	sum_compl(t_compl a, t_compl b)
 {
-	t_complex	result;
+	t_compl	result;
 
 	result.r = a.r + b.r;
 	result.i = a.i + b.i;
@@ -27,9 +27,9 @@ t_complex	sum_compl(t_complex a, t_complex b)
 // (a + bi)^2 = a^2 - b^2 + 2abi
 // in function: z.r = a && z.i = b
 
-t_complex	sq_compl(t_complex z)
+t_compl	sq_compl(t_compl z)
 {
-	t_complex	result;
+	t_compl	result;
 
 	result.r = (z.r * z.r) - (z.i * z.i);
 	result.i = (2 * z.r * z.i);
