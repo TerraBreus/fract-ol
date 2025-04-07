@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:55:25 by zivanov           #+#    #+#             */
-/*   Updated: 2025/04/05 16:48:08 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/07 14:52:33 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ To see the possible constants for the julia set type:\n\
 ./fractol julia_constants\n\n\
 In addition, the flag `-i` can be given to define the amount of iterations\n\
 which consequently defines the quality of the fractal\n\
-If no flag or an incorrect flag is given, a standard iteration of 20 is put through\n\
+If no flag or an incorrect value is given to the flag, a standard iteration\n\
+of 20 is put through\n\
 Example: ./fractol julia 2 -i 20\n\n"
 
 # define JULIA_CONSTANTS " \
@@ -57,19 +58,6 @@ Example: ./fractol julia 2 -i 20\n\n"
 # define WHITE 0xFFFFFF
 # define BLACK 0x000000
 # define MANDELBROT_COLOR 0x800080
-
-//TODO
-# define JULIA \
-    { {0.285, 0.0}, \
-      {0.285, 0.01}, \
-      {0.45, 0.1428}, \
-      {-0.70176, -0.3842}, \
-      {-0.835, -0.2321}, \
-      {-0.8, 0.156}, \
-      {-0.7269, 0.1889}, \
-      {0.0, 0.8}, \
-      {0.35, 0.35}, \
-      {0.4, 0.4} }
 
 //--KEYPRESS-CONTSANTS--
 # define DESTROY_WINDOW 17
