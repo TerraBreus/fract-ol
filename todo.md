@@ -1,5 +1,6 @@
 ### Fract-ol
 
+- Fix leak when writing strings to window.
 - Create ft_atod() for julia parsing.
 - Fix bug where x-axis is mirrored when only an imaginary constant is given for the julia constant.
 - Fix parsing.
@@ -41,3 +42,8 @@ double	ft_atof(char *str)
 ```
 
 *Optional*
+- Implement flag for window size.
+- Implement Phoenix.
+	Uses the following calculation
+	`Fn+1 = Fn^2 + c^2`
+	Where C is the constant defined as in the julia set.
