@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:55:25 by zivanov           #+#    #+#             */
-/*   Updated: 2025/04/07 14:52:33 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/07 15:12:38 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,11 @@ Example: ./fractol julia 2 -i 20\n\n"
 //--KEYPRESS-CONTSANTS--
 # define DESTROY_WINDOW 17
 # define ESCAPE 65307
-# define ARROW_UP 65362
-# define ARROW_DOWN 65364
 # define ARROW_LEFT 65361
+# define ARROW_UP 65362
 # define ARROW_RIGHT 65363
+# define ARROW_DOWN 65364
+# define R_KEY 114
 
 /*---S T R U C T U R E S---*/
 
