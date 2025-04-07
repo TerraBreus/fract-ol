@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:55:25 by zivanov           #+#    #+#             */
-/*   Updated: 2025/04/07 15:12:38 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/07 15:42:54 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ Example: ./fractol julia 2 -i 20\n\n"
 7. c = 0 + 0.8i\n \
 8. c = 0.35 + 0.35i\n \
 9. c = 0.4 + 0.4i\n"
+
+# define LEGEND "\
+Move around  =  arrow keys  \
+Zoom in/out  =  scrollwheel  \
+Reset  =  r" 
 
 /*---C O N S T A N T S---*/
 
@@ -129,6 +134,7 @@ bool	set_julia(t_fractal *fractal, char **argv);
 char	*ft_strdup(char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_putstr_fd(char *str, int fd);
+int		print_legend(t_fractal *f);
 
 //-EXIT-UTILS-
 void	exit_program(t_fractal *fractal, int exit_status);
