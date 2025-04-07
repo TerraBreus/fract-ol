@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/03/31 15:02:05 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/05 16:49:56 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/07 14:46:17 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,5 @@ bool	is_input_parsed(t_fractal *fractal, int argc, char **argv)
 		return (four_arguments(fractal, argv));
 	else if (argc == 5)
 		return (five_arguments(fractal, argv));
-	ft_putstr_fd(USAGE, 2);
 	return (false);
 }
