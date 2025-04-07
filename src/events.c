@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/04/03 13:58:56 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/05 16:26:52 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/07 15:13:13 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ static int	keyboard_events(int key, t_fractal *fractal)
 {
 	if (key == ESCAPE)
 		exit_program(fractal, EXIT_SUCCESS);
-	else if (key >= 65361 && key <= 65364)
+	else if (key >= ARROW_LEFT && key <= ARROW_DOWN)
 	{
-		if (key == ARROW_DOWN)
-			fractal->y_offset += 10;
 		if (key == ARROW_UP)
-			fractal->y_offset -= 10;
+			fractal->y_offset += 0.1 * fractal->zoom;
+		if (key == ARROW_DOWN)
+			fractal->y_offset -= 0.1 * fractal->zoom;
 		if (key == ARROW_LEFT)
-			fractal->x_offset -= 10;
+			fractal->x_offset -= 0.1 * fractal->zoom;
 		if (key == ARROW_RIGHT)
-			fractal->x_offset += 10;
+			fractal->x_offset += 0.1 * fractal->zoom;
 		fractal_render(fractal);
 	}
-	else if (key == 114)
+	else if (key == R_KEY)
 	{
 		fractal->y_offset = 0.0;
 		fractal->x_offset = 0.0;
