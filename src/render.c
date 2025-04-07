@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 18:29:26 by zivanov           #+#    #+#             */
-/*   Updated: 2025/04/07 15:06:35 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/07 15:39:51 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,5 @@ void	fractal_render(t_fractal *fractal)
 	if (mlx_put_image_to_window(fractal->mlx_ptr, \
 			fractal->mlx_window, fractal->img.mlx_img, 0, 0) == -1)
 		exit_program(fractal, EXIT_FAILURE);
+	print_legend(fractal);
 }

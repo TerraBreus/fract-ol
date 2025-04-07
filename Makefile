@@ -1,15 +1,16 @@
 NAME = fractol
 
-SRC = 	exit_utils.c	\
-	init.c		\
-	input_parser.c	\
-	main.c		\
-	math_utils.c	\
-	render.c	\
-	str_utils.c	\
-	events.c	\
-	ft_atoi.c	\
-	define_fractal.c
+SRC = 	exit_utils.c		\
+	init.c			\
+	input_parser.c		\
+	main.c			\
+	math_utils.c		\
+	render.c		\
+	str_utils.c		\
+	events.c		\
+	ft_atoi.c		\
+	define_fractal.c	\
+	str_to_win.c
 SRC_DIR = src/
 
 OBJ_DIR = obj/
