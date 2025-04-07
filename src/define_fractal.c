@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   define_fractal.c                                   :+:      :+:    :+:   */
+/*   define_fractal.c                                    :+:    :+:           */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 16:12:16 by zivanov           #+#    #+#             */
-/*   Updated: 2025/04/05 16:51:12 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/04/07 14:43:58 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ bool	set_julia(t_fractal *fractal, char **argv)
 	julia_set = ft_atoi(argv[2]);
 	if (julia_set >= 0 && julia_set <= 9)
 		parse_julia_set(fractal, julia_set);
+	else
+		return (false);
 	fractal->name = ft_strdup(argv[1]);
 	if (fractal->name == NULL)
 		exit_program(fractal, EXIT_FAILURE);
