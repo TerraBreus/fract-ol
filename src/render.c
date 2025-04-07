@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 18:29:26 by zivanov           #+#    #+#             */
-/*   Updated: 2025/04/05 16:29:55 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/07 15:06:35 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ static void	assign_pixel_color(int x, int y, t_fractal *fractal)
 	double	zoom_and_map;
 
 	zoom_and_map = fractal->window_map * fractal->zoom;
-	z.r = (x + fractal->x_offset - WIDTH / 2) * zoom_and_map;
-	z.i = (y + fractal->y_offset - HEIGHT / 2) * zoom_and_map * -1;
+	z.r = ((x - WIDTH / 2) * zoom_and_map) + fractal->x_offset;
+	z.i = ((y - HEIGHT / 2) * zoom_and_map * -1) + fractal->y_offset;
 	check_fractal_type(fractal, &z, &c);
 	i = 0;
 	while (i < fractal->max_i)
