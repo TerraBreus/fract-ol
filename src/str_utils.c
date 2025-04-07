@@ -6,7 +6,7 @@
 /*   By: zivanov <marvin@42.fr>                        +#+                    */
 /*                                                    +#+                     */
 /*   Created: 2025/04/01 17:04:00 by zivanov        #+#    #+#                */
-/*   Updated: 2025/04/05 14:58:34 by zivanov        ########   odam.nl        */
+/*   Updated: 2025/04/07 14:54:17 by zivanov        ########   odam.nl        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ char	*ft_strdup(char *str)
 		length++;
 	result = (char *)malloc(sizeof(char) * (length + 1));
 	if (result == NULL)
-	{
-//		ft_error_malloc();		//TODO
 		return (NULL);
-	}
 	result[length] = '\0';
 	while (--length >= 0)
 		result[length] = str[length];
